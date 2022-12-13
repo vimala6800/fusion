@@ -1,0 +1,814 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fusion</title>
+    <link rel="icon" href="favicon.ico" />
+    <!-- Bootstrap Font Icon CSS -->
+    
+</head>
+<body>
+    <header id="header" class="header header-nav fixed-top align-items-center">
+        <nav class="navbar-main">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a class="navbar-brand"><img src="./images/logo2.png" class="img-fluid" /></a>
+                    <ul class="d-flex header-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-icon" href="Create_Requisition.html" data-bs-toggle="dropdown"> <i class="bi bi-bell"></i> <span class="badge bg-primary badge-number">4</span> </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                                <li class="dropdown-header"> You have 4 new notifications <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="notification-item"> <i class="bi bi-exclamation-circle text-warning"></i><div><h4>Lorem Ipsum</h4><p>Quae dolorem earum veritatis oditseno</p><p>30 min. ago</p></div></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="notification-item"> <i class="bi bi-x-circle text-danger"></i><div><h4>Atque rerum nesciunt</h4><p>Quae dolorem earum veritatis oditseno</p><p>1 hr. ago</p></div></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="notification-item"> <i class="bi bi-check-circle text-success"></i><div><h4>Sit rerum fuga</h4><p>Quae dolorem earum veritatis oditseno</p><p>2 hrs. ago</p></div></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="notification-item"> <i class="bi bi-info-circle text-primary"></i><div><h4>Dicta reprehenderit</h4><p>Quae dolorem earum veritatis oditseno</p><p>4 hrs. ago</p></div></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="dropdown-footer"> <a href="#">Show all notifications</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown pe-3">
+                            <a class="nav-link nav-icon nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle"></i> <span class="d-none d-md-block dropdown-toggle ps-2">Sweekrit P</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                                <li class="dropdown-header"><h6>Sweekrit P</h6> <span>Manager - Business Development</span></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li> <a class="dropdown-item d-flex align-items-center" href="Profile_Sales.html"> <i class="bi bi-person"></i> <span>My Profile</span> </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li> <a class="dropdown-item d-flex align-items-center" href="index.html"> <i class="bi bi-box-arrow-right"></i> <span>Sign Out</span> </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="Dashboard_Sales.html"><i class="bi bi-speedometer"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <!--<a class="nav-link" href="advance-search_Sales.html">Advanced Search</a>-->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Requisition_Sales.html">Requisition</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="SkillProfile_Sales.html">Skills/Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="pagetitle"><h1>Requisition</h1></div>
+        <section class="section">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!--<div class="row">
+        <div class="col-md-12 col-sm-12 col-12">
+            <form class="d-flex mt-2 mb-2 search-bg" role="search">
+                <input class="form-control me-2 w-50" type="search" placeholder="Search..." aria-label="Search">
+                <button class="btn btn-primary" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+                <small class="mt-2 ml-5 ms-2">(Records for last 6 months)</small>
+            </form>
+        </div>
+    </div>-->
+                            <div class="divFilter_bg">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Req #</label>
+                                        <label id="lblReqID" class="form-control-plaintext">1201964 - Sight Spectrum</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Potential ID</label>
+                                        <label id="lblPotentialID" class="form-control-plaintext">32467467</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Complexity</label>
+                                        <label id="lblComplexity" class="form-control-plaintext">Low</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Requisition Date</label>
+                                        <label id="lblRequisition" class="form-control-plaintext">07/11/2022</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Client Name</label>
+                                        <label id="lblClientName" class="form-control-plaintext">Wicom</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Project Type</label>
+                                        <label id="lblProjectType" class="form-control-plaintext">FTE</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Sales Person</label>
+                                        <label id="lblSalesPerson" class="form-control-plaintext">Aravind M</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">PM Name</label>
+                                        <label id="lblPMName" class="form-control-plaintext">Karthik A S</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Requisition Status</label>
+                                        <label id="lblReqStatus" class="form-control-plaintext">Pending</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Project Expected Start Date</label>
+                                        <label id="lblProjectExpectedStartDate" class="form-control-plaintext">10/12/2022</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h4 class="heading-btm mt-3 mb-3">General Information</h4>
+                                <div class="accordion mb-5" id="accordionRequisition">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-heading1">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general-in01" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                                Job Description
+                                            </button>
+                                        </h2>
+                                        <div id="general-in01" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading1" data-bs-parent="#accordionRequisition">
+                                            <div class="accordion-body">
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label">Job Description / Specific Skillset</label>
+                                                        <label id="lblJobDescription" class="form-control-plaintext">Full stack - FTE</label>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label">Duration / Tenure</label>
+                                                        <label id="lblDurationTenure" class="form-control-plaintext">12 months</label>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label">Shift timing / TimeZone / Overlap</label>
+                                                        <label id="lblTimeZone" class="form-control-plaintext"> - </label>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label">Number of resources</label>
+                                                        <label id="lblNoResource" class="form-control-plaintext">3</label>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label">Open Positions</label>
+                                                        <label id="lblOpenPositions" class="form-control-plaintext">3</label>
+                                                    </div>
+                                                </div>
+                                                <div class="desc-list-info">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <h6>Key </h6>
+                                                            <p>Developer Responsibilities:</p>
+                                                            Handling the design, architecture, development, code review, and testing of key applications
+                                                            Designing user interactions on web pages.
+                                                            Developing back-end website applications.
+                                                            Databases design and development for functionality.
+                                                            Ensuring cross-platform optimization for mobile phones.
+                                                            Ensuring responsiveness of applications.
+                                                            Working alongside graphic designers for web design features.
+                                                            Seeing through a project from conception to finished product.
+                                                            Designing and developing APIs.
+                                                            Meeting both technical and consumer needs.
+                                                            <div class="mt-3"><a href="">JD</a></div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label id="lbl" class="col-form-label">Preferred Education</label>
+                                                                    <label class="form-control-plaintext">BE - CSE, MCA</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label id="lbl" class="col-form-label">Minimum experience</label>
+                                                                    <label class="form-control-plaintext">3</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label id="lbl" class="col-form-label">Maximum experience</label>
+                                                                    <label class="form-control-plaintext">5</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-heading2">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in02" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                Skills and Experience
+                                            </button>
+                                        </h2>
+                                        <div id="general-in02" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading2" data-bs-parent="#accordionRequisition">
+                                            <div class="accordion-body">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Sl. No.</th>
+                                                            <th>Technology</th>
+                                                            <th>Mandatory</th>
+                                                            <th>Experience</th>
+                                                            <th>Comments</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Python</td>
+                                                            <td>Yes</td>
+                                                            <td>2</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>React JS</td>
+                                                            <td>Yes</td>
+                                                            <td>1</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Angular</td>
+                                                            <td>Yes</td>
+                                                            <td>1</td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!--<div class="row">
+                            <div class="col-md-3">
+                                <label for="" class="col-form-label">Language</label>
+                                <label class="form-control-plaintext">English/Hindi</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="col-form-label">Qulification</label>
+                                <label class="form-control-plaintext">BE</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="" class="col-form-label">PG</label>
+                                <label class="form-control-plaintext">MBA</label>
+                            </div>
+                        </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-heading3">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in03" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                Resource
+                                            </button>
+                                        </h2>
+                                        <div id="general-in03" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading3" data-bs-parent="#accordionRequisition">
+                                            <div class="accordion-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Exp. (yrs)</th>
+                                                                <th>Round 1</th>
+                                                                <th>Round 2</th>
+                                                                <th>Round 3</th>
+                                                                <!--<th>Contact Number</th>-->
+                                                                <th>Worked with FWS</th>
+                                                                <th>Resume</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a href="Resource_Details.html">Arif A</a></td>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <label>03/11/2022 12:00 PM</label>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="disabled">07/11/2022 10:00 AM</label>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="disabled">08/11/2022 11:00 AM</label>
+                                                                </td>
+                                                                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                                                                <td><a href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i></a></td>
+                                                                <td>Reject</td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="Resource_Details.html">Shivakumar</a></td>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <label>23/03/2022 12:00 AM</label>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="">23/03/2022 12:00 AM</label>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="">08/11/2022 11:00 AM</label>
+                                                                </td>
+                                                                <!--<td>1234567890</td>-->
+                                                                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                                                                <td><a href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i></a></td>
+                                                                <td>Round 2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="Resource_Details.html">Srikanth Sherigar</a></td>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <label class="">03/11/2022 12:00 PM</label>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="">04/11/2022 10:00 AM</label>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="disabled">08/11/2022 11:00 AM</label>
+                                                                </td>
+                                                                <td class="text-center"><i class="bi bi-x-circle text-danger"></i></td>
+                                                                <td><a href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i></a></td>
+                                                                <td>Reject</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in03" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Location
+                    </button>
+                </h2>
+                <div id="general-in03" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading3">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Client Location </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> US </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Placement </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> India </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> State </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> Karnataka </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> City </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> Bangalore </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Address </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> XXX </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Pincode </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> 560001 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-12">
+                                <div class="desc-list-info">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label id="lbl" class="col-form-label"> Work on Location </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-control-plaintext">
+                                                <div class="form-check">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Other Client Locations
+                                                    </label>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+                                    <!--<div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in04" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Schedule
+                    </button>
+                </h2>
+                <div id="general-in04" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading4">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label id="lbl" class="col-form-label">Shift timing / TimeZone / Overlap</label>
+                                <label class="form-control-plaintext">UK</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Start Date </label>
+                                <label class="form-control-plaintext"> 05/05/2022 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Est End Date </label>
+                                <label class="form-control-plaintext"> 09/09/2022 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Hours Perweek </label>
+                                <label class="form-control-plaintext"> 40.00 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Per Day</label>
+                                <label class="form-control-plaintext"> 8.00</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Days Perweek </label>
+                                <label class="form-control-plaintext"> 5 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Schedule Notes </label>
+                                <label class="form-control-plaintext"> - </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-heading5">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in05" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                Financial
+                                            </button>
+                                        </h2>
+                                        <div id="general-in05" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading5" data-bs-parent="#accordionRequisition">
+                                            <div class="accordion-body">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Dept </label>
+                                                        <label class="form-control-plaintext"> Mortgage </label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Cost Price Per Hour </label>
+                                                        <label class="form-control-plaintext"> 25 </label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Currency </label>
+                                                        <label class="form-control-plaintext"> USD </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in06" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Contact Information
+                    </button>
+                </h2>
+                <div id="general-in06" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading6">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Vendor Contact </label>
+                                <label class="form-control-plaintext"> 999 999 9999 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Vendor Phone  </label>
+                                <label class="form-control-plaintext"> 080 999 999 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> HR Contact  </label>
+                                <label class="form-control-plaintext"> 999 999 9999 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Add Contact   </label>
+                                <label class="form-control-plaintext"> 999 999 9999 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Add Phone  </label>
+                                <label class="form-control-plaintext"> 080 999999 </label>
+                            </div>
+                            <div class="col-md-3">
+                                <label id="lbl" class="col-form-label"> Add Email  </label>
+                                <label class="form-control-plaintext"> anil@gmail.com </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-heading7">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in07" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                Requisition Custom Field
+                                            </button>
+                                        </h2>
+                                        <div id="general-in07" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading7" data-bs-parent="#accordionRequisition">
+                                            <div class="accordion-body">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Business Title  </label>
+                                                        <label class="form-control-plaintext"> Under writer </label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Is Laptop Required  </label>
+                                                        <label class="form-control-plaintext"> Yes </label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Is Re hiring work </label>
+                                                        <label class="form-control-plaintext"> No </label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label id="lbl" class="col-form-label"> Will role require fws ID Email </label>
+                                                        <label class="form-control-plaintext"> Yes </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-heading8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in08" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Date of Interest
+                    </button>
+                </h2>
+                <div id="general-in08" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading8">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Date Created </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> - </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Date Pending  </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> - </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Date Closed  </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> - </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label id="lbl" class="col-form-label"> Date Canceled   </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-control-plaintext"> - </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <a routerLink="" class="btn btn-primary">Back to Listing</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal" id="addResource" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Interview Feedback Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Work Experience</h5>
+                            <small>
+                                For example: The candidate has previous work experience with skills or expertise that prepares them to succeed in the position. You might
+                                ask them, “What were you hired to do in your last three jobs?”
+                            </small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="WorkExp" id="radWorkExp1">
+                                        <label class="form-check-label" for="radWorkExp1">1</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="WorkExp" id="radWorkExp2">
+                                        <label class="form-check-label" for="radWorkExp2">2</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="WorkExp" id="radWorkExp3">
+                                        <label class="form-check-label" for="radWorkExp3">3</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="WorkExp" id="radWorkExp4">
+                                        <label class="form-check-label" for="radWorkExp4">4</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="WorkExp" id="radWorkExp5">
+                                        <label class="form-check-label" for="radWorkExp5">5</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="WorkExp" id="radWorkExpNA">
+                                        <label class="form-check-label" for="radWorkExpNA">NA</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <textarea id="txtWorkExpComments" rows="4" class="form-control" placeholder="Comments" style="height: 100px" required></textarea>
+                                <label for="txtWorkExpComments" class="form-label">Comments</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Skills (Technical) </h5>
+                            <small>
+                                For example: The candidate has the necessary technical skills to perform the job successfully. You might ask them, “What were the key
+                                competencies of your last two jobs?”
+                            </small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="skills" id="radSkill1">
+                                        <label class="form-check-label" for="radSkill1">1</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="skills" id="radSkill2">
+                                        <label class="form-check-label" for="radSkill2">2</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="skills" id="radSkill3">
+                                        <label class="form-check-label" for="radSkill3">3</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="skills" id="radSkill4">
+                                        <label class="form-check-label" for="radSkill4">4</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="skills" id="radSkill5">
+                                        <label class="form-check-label" for="radSkill5">5</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="skills" id="radSkillNA">
+                                        <label class="form-check-label" for="radSkillNA">NA</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <textarea id="txtSkillComments" rows="4" class="form-control" placeholder="Comments" style="height: 100px" required></textarea>
+                                <label for="txtSkillComments" class="form-label">Comments</label>
+                            </div>
+                        </div>
+                        <div class="card-header"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Verbal Communication</h5>
+                            <small>The candidate’s communication skills were strong and clear.</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="VerbalComm" id="radVerbalComm1">
+                                        <label class="form-check-label" for="radVerbalComm1">1</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="VerbalComm" id="radVerbalComm2">
+                                        <label class="form-check-label" for="radVerbalComm2">2</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="VerbalComm" id="radVerbalComm3">
+                                        <label class="form-check-label" for="radVerbalComm3">3</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="VerbalComm" id="radVerbalComm4">
+                                        <label class="form-check-label" for="radVerbalComm4">4</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="VerbalComm" id="radVerbalComm5">
+                                        <label class="form-check-label" for="radVerbalComm5">5</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="VerbalComm" id="radVerbalCommNA">
+                                        <label class="form-check-label" for="radVerbalCommNA">NA</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <textarea id="txtVerbalCommComments" rows="4" class="form-control" placeholder="Comments" style="height: 100px" required></textarea>
+                                <label for="txtVerbalCommComments" class="form-label">Comments</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Overall Impression and Recommendation</h5>
+                            <small>Please provide any final comments and your recommendations for proceeding with the candidate.</small>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-floating">
+                                <textarea id="txtOverallImpression" rows="4" class="form-control" placeholder="Comments" style="height: 100px" required></textarea>
+                                <label for="txtOverallImpression" class="form-label"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+            © 2022 Flatworld Edge All Rights Reserved.
+        </div>
+    </footer>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/moment.min.js"></script>
+    <script src="./js/daterangepicker.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        $('.interviewStatus').change(function () {
+            //this is just getting the value that is selected
+            var title = $(this).val();
+            $('.modal-title').html(title);
+            $('.modal').modal('show');
+        });
+    </script>
+</body>
+</html>
