@@ -12,7 +12,7 @@ const routes: Routes = [
     component:ListReqComponent
   },
    {
-     path:'requisition/add',
+     path:'req/add',
      component:AddReqComponent
    },
    {
